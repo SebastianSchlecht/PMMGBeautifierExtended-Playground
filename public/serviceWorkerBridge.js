@@ -33,8 +33,3 @@ else
 
 window.removeEventListener("message", func);
 window.addEventListener("message", func);
-
-chrome.runtime.connect().onDisconnect.addListener(() => {
-    console.warn("SW bridge broken!")
-    window.removeEventListener("message", func);
-})
