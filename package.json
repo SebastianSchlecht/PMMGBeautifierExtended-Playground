@@ -10,6 +10,9 @@
     "buildContent": "vite build -c vite_contentScript.config.js",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "valibot": "^0.27.1"
+  },
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
