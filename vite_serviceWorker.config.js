@@ -12,11 +12,9 @@ export default {
         minify: !isDev,
         modulePreload: false,
         reportCompressedSize: !isDev,
-        emptyOutDir: !isDev,
+        emptyOutDir: false,
         rollupOptions: {
            input: {
-               popup: resolve(srcDir, 'popup', 'index.html'),
-               contentInjected: resolve(srcDir, 'injectedContent', 'index.ts'),
                serviceWorker: resolve(srcDir, 'serviceWorker', 'index.ts'),
            },
             output: {

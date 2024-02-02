@@ -1,5 +1,4 @@
 // vite.config.js
-
 import path, { resolve } from 'path';
 
 const isDev = process.env.IS_DEV === 'true';
@@ -12,12 +11,10 @@ export default {
         minify: !isDev,
         modulePreload: false,
         reportCompressedSize: !isDev,
-        emptyOutDir: !isDev,
+        emptyOutDir: false,
         rollupOptions: {
            input: {
-               popup: resolve(srcDir, 'popup', 'index.html'),
                contentInjected: resolve(srcDir, 'injectedContent', 'index.ts'),
-               serviceWorker: resolve(srcDir, 'serviceWorker', 'index.ts'),
            },
             output: {
                entryFileNames: 'js/[name]/index.js',

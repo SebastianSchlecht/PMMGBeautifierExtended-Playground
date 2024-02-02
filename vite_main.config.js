@@ -16,8 +16,6 @@ export default {
         rollupOptions: {
            input: {
                popup: resolve(srcDir, 'popup', 'index.html'),
-               contentInjected: resolve(srcDir, 'injectedContent', 'index.ts'),
-               serviceWorker: resolve(srcDir, 'serviceWorker', 'index.ts'),
            },
             output: {
                entryFileNames: 'js/[name]/index.js',
