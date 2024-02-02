@@ -16,4 +16,4 @@ export interface PMMGPreferences {
 }
 
 
-type ColorScheme = "enhanced" | "icons"
+export type ColorScheme = "enhanced" | "icons"

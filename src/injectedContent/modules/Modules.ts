@@ -1,4 +1,4 @@
-import {ApexBuffer} from "../apexHelper/BufferHelper.ts";
+import {ApexBuffer} from "@/apex/BufferHelper.ts";
 
 export type ApexEvent =
     { event: "BufferCreated", buffers: ApexBuffer[] };

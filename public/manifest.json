@@ -2,6 +2,7 @@
   "manifest_version": 3,
   "name": "PMMG test",
   "description": "Improve and tweak the interface elements of PrUn website",
+  "minimum_chrome_version": "92",
   "version": "1.10.4",
   "icons": {
     "128": "icon128.png"
@@ -18,20 +19,27 @@
   "content_scripts": [
     {
       "matches": [
-        "https://apex.prosperousuniverse.com/*",
-        "https://www.google.com/*"
+        "https://apex.prosperousuniverse.com/*"
       ],
       "run_at": "document_start",
       "js": [
-        "src/pages/contentInjected/index.js"
+        "js/contentInjected/index.js"
       ]
     }
   ],
+  "background": {
+    "service_worker": "js/serviceWorker/index.js",
+    "type": "module"
+  },
   "host_permissions": [
     "https://apex.prosperousuniverse.com/",
     "https://script.google.com/",
     "https://script.googleusercontent.com/",
     "https://rest.fnar.net/"
+  ],
+  "web_accessible_resources": [{
+    "matches": ["https://apex.prosperousuniverse.com/*"],
+    "resources": ["webSocketSniffer.js"]
+  }]
 
-  ]
 }

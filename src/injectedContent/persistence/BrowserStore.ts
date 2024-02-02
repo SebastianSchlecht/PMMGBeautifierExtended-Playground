@@ -39,6 +39,10 @@ export default function build(currentBrowser: Browser): BrowserStore {
     }
 }
 
+export function detectBrowser(): Browser {
+    return (typeof browser === "undefined") ? "chromium" : "firefox";
+}
+
 
 export async function firefoxLoad(key: BrowserStorePreferenceKey | BrowserStorePreferenceKey[]): Promise<ResultObject> {
     return browser.storage.local.get(key);

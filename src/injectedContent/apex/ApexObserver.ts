@@ -1,4 +1,4 @@
-import {Selector} from "./Selector.ts";
+import {Selector} from "../Selector.ts";
 
 
 export class ApexObserver {
@@ -24,8 +24,8 @@ export class ApexObserver {
 
 
     public initObserver(target:Node | undefined = undefined) {
-        target = target || document.body;
-        this.mutationObserver.observe(target, { childList: true, subtree: true })
+        const targetOrBody = target || document.body;
+        this.mutationObserver.observe(targetOrBody, { childList: true, subtree: true })
     }
 
     public shutdown() {

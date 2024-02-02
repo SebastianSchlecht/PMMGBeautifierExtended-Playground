@@ -1,7 +1,7 @@
 import {ApexEvent, EventModule, PollingModule} from "./modules/Modules.ts";
 import Preferences from "./models/Preferences.ts";
-import {ApexObserver} from "./ApexObserver.ts";
-import {toApexBuffer} from "./apexHelper/BufferHelper.ts";
+import {ApexObserver} from "./apex/ApexObserver.ts";
+import {toApexBuffer} from "@/apex/BufferHelper.ts";
 
 
 interface ModuleEntry<T extends EventModule | PollingModule> {
@@ -13,6 +13,7 @@ interface ModuleEntry<T extends EventModule | PollingModule> {
 
 export class ModuleRunner {
     private eventModules: ModuleEntry<EventModule>[];
+    // @ts-ignore
     private pollingModules: ModuleEntry<PollingModule>[];
     private apexObserver: ApexObserver;
 
