@@ -95,12 +95,6 @@ async function runApplication(preferences: Preferences, detectedBrowser: Browser
    // }
 
 
-    //ToDO test if SW is needed
-    window.addEventListener("message", function (event) {
-        if (event.data.message && event.data.message === "pmmg_websocket_update") {
-            console.log("XoXo test received some data here too!");
-        }
-    });
 
     new ModuleRunner(
         preferences,

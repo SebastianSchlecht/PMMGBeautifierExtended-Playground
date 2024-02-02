@@ -1,5 +1,5 @@
 import {detectBrowser} from "@/persistence/BrowserStore.ts";
-import {ProcessMessage} from "./ApexMessageParser.ts";
+import {processMessage} from "./ApexMessageParser.ts";
 
 
 
@@ -22,13 +22,18 @@ function initialize() {
     })
 
 
-    browserInstance.runtime.onMessage.addListener((message, sender) => {
+    browserInstance.runtime.onMessage.addListener((message) => {
         if (message.message === "pmmg_websocket_update" && typeof message.payload === "string") {
-            console.log("Received message from sniffer", message, sender)
-            ProcessMessage(message.payload)
+            //console.log("Received message from sniffer", message, sender)
+            processMessage(message.payload)
             return false;
         } else {
             console.log("Received some other request", message);
+            // What Object is that?
+            //{
+            //     "message": "prep_registration",
+            //     "username": "frozenice"
+            // }
         }
     })
 
